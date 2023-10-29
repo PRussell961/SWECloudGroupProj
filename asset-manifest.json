@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/SWECloudGroupProj/static/css/main.b046793a.css",
+    "main.js": "/SWECloudGroupProj/static/js/main.0b3b267d.js",
+    "static/js/787.04e1057e.chunk.js": "/SWECloudGroupProj/static/js/787.04e1057e.chunk.js",
+    "index.html": "/SWECloudGroupProj/index.html",
+    "main.b046793a.css.map": "/SWECloudGroupProj/static/css/main.b046793a.css.map",
+    "main.0b3b267d.js.map": "/SWECloudGroupProj/static/js/main.0b3b267d.js.map",
+    "787.04e1057e.chunk.js.map": "/SWECloudGroupProj/static/js/787.04e1057e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.b046793a.css",
+    "static/js/main.0b3b267d.js"
+  ]
+}
