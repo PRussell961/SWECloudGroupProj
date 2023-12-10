@@ -1,6 +1,21 @@
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Axios from 'axios';
+import { useState, useEffect } from 'react';
 function Home() {
+
+  const[allReviews, setAllReviews] = useState([]);
+  const[book, setBook] = useState("");
+  const[print, setPrint] = useState("");
+  
+  const searchBooks = () => {
+    console.log(book);
+    Axios.post('http://18.216.35.114:8080/read',{books: book}).then((response) => {
+      setAllReviews(response.data)
+    }).then(console.log(allReviews));
+  }
+
+
   return (
     <>
     <div class="d-flex justify-content-center">
@@ -13,12 +28,19 @@ function Home() {
     <Form>
       <Form.Group className="mb-3">
         <Form.Label style={{textAlign: 'center',}} ><p>Enter Book Title Here</p></Form.Label>
-        <Form.Control type="search" placeholder="Enter Title" />
+        <Form.Control type="search" placeholder="Enter Title" onChange= {(e) => { setBook(e.target.value);}}/>
         
       </Form.Group>
     </Form>
-    <Button variant="outline-success">Search</Button>
+    <Button variant="outline-success" onClick={searchBooks}>Search</Button>
     </div>
+
+    {allReviews.map((val)=>{
+        return <>
+        <div><h4>{val.author}'s review of {val.book}</h4>
+        </div><h5>{val.content}</h5>
+        </>
+    })}
     </>
   );
 }
